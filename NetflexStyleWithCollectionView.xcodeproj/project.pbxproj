@@ -18,6 +18,8 @@
 		00CB900D27575ED300F2FF42 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB900C27575ED300F2FF42 /* ContentCollectionViewCell.swift */; };
 		00CB9010275760F600F2FF42 /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB900F275760F600F2FF42 /* ContentCollectionViewHeader.swift */; };
 		00CB901327576A3300F2FF42 /* ContentCollectionViewRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB901227576A3300F2FF42 /* ContentCollectionViewRankCell.swift */; };
+		00CB901627576DD600F2FF42 /* ContentCollectionViewMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB901527576DD600F2FF42 /* ContentCollectionViewMainCell.swift */; };
+		00CB90192757762D00F2FF42 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB90182757762C00F2FF42 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		00CB900C27575ED300F2FF42 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		00CB900F275760F600F2FF42 /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
 		00CB901227576A3300F2FF42 /* ContentCollectionViewRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewRankCell.swift; sourceTree = "<group>"; };
+		00CB901527576DD600F2FF42 /* ContentCollectionViewMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewMainCell.swift; sourceTree = "<group>"; };
+		00CB90182757762C00F2FF42 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				00CB8FF32757565200F2FF42 /* LaunchScreen.storyboard */,
 				00CB8FF62757565200F2FF42 /* Info.plist */,
 				00CB8FFF275756CA00F2FF42 /* HomeViewController.swift */,
+				00CB90182757762C00F2FF42 /* UIButton+.swift */,
+				00CB901527576DD600F2FF42 /* ContentCollectionViewMainCell.swift */,
 				00CB901227576A3300F2FF42 /* ContentCollectionViewRankCell.swift */,
 				00CB900F275760F600F2FF42 /* ContentCollectionViewHeader.swift */,
 				00CB900C27575ED300F2FF42 /* ContentCollectionViewCell.swift */,
@@ -161,7 +167,9 @@
 				00CB9010275760F600F2FF42 /* ContentCollectionViewHeader.swift in Sources */,
 				00CB8FEB2757564900F2FF42 /* SceneDelegate.swift in Sources */,
 				00CB901327576A3300F2FF42 /* ContentCollectionViewRankCell.swift in Sources */,
+				00CB90192757762D00F2FF42 /* UIButton+.swift in Sources */,
 				00CB9000275756CA00F2FF42 /* HomeViewController.swift in Sources */,
+				00CB901627576DD600F2FF42 /* ContentCollectionViewMainCell.swift in Sources */,
 				00CB900A27575B7C00F2FF42 /* Content.swift in Sources */,
 				00CB900D27575ED300F2FF42 /* ContentCollectionViewCell.swift in Sources */,
 			);
