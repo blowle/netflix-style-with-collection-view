@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: UICollectionViewController {
+    var contents: [Content] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +21,51 @@ class HomeViewController: UICollectionViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "netflix_icon"), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: nil, action: nil)
+        
+        // Bring Data
+        contents = getContents()
+        
+        // collectionview item setting
+        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
+    }
+    
+    func getContents() -> [Content] {
+        guard let path = Bundle.main.path(forResource: "Content", ofType: "plist"),
+              let data = FileManager.default.contents(atPath: path),
+              let list = try? PropertyListDecoder().decode([Content].self, from: data) else { return [] }
+        return list
+    }
+}
+
+// UICollectionView DataSource, Delegate
+extension HomeViewController {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        default:
+            return contents[section].contentItem.count
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch contents[indexPath.section].sectionType {
+        case .basic, .large:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as? ContentCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.imageView.image = contents[indexPath.section].contentItem[indexPath.row].image
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+    }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return contents.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sectionName = contents[indexPath.section].sectionName
+        print("name: \(sectionName) section's \(indexPath.row + 1)'th content.")
     }
 }
