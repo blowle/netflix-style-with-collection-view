@@ -27,6 +27,7 @@ class HomeViewController: UICollectionViewController {
         
         // collectionview item setting
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader")
     }
     
     func getContents() -> [Content] {
@@ -58,6 +59,17 @@ extension HomeViewController {
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ContentCollectionViewHeader", for: indexPath) as? ContentCollectionViewHeader else { fatalError("Could not dequeue Header") }
+            
+            headerView.sectionNameLabel.text = contents[indexPath.section].sectionName
+            return headerView
+        }
+        
+        return UICollectionReusableView()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
